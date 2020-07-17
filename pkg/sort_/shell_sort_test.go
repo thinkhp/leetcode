@@ -41,7 +41,7 @@ func shellSort(nums []int) []int {
 	//gap := 3
 	for ; gap > 0; gap /= 2 {
 		for i := gap; i < len(nums); i++ {
-			for j := i; j >= gap && nums[j-gap] > nums[j] ; j -= gap {
+			for j := i; j >= gap && nums[j-gap] > nums[j]; j -= gap {
 				nums[j-gap], nums[j] = nums[j], nums[j-gap]
 			}
 		}

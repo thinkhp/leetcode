@@ -50,20 +50,20 @@ func lengthOfLongestSubstring(ss string) int {
 		return max
 	}
 
-	s, e:= 0, 1
-	for ;s < l && e < l ; {
+	s, e := 0, 1
+	for s < l && e < l {
 		v := ss[e]
 		if i := m[v]; i != -1 { //在 [s,e] 出现重复元素
 			if max < e-s {
-				max = e-s
+				max = e - s
 			}
-			s = m[v]+1
+			s = m[v] + 1
 		}
 		m[v] = e
 		e++
 	}
 	if max < e-s {
-		max = e-s
+		max = e - s
 	}
 	return max
 }

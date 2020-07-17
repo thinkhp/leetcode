@@ -26,7 +26,7 @@ import (
 func TestRemoveNthFromEnd(t *testing.T) {
 	type mock struct {
 		nums int
-		nTH int
+		nTH  int
 	}
 
 	ss := []mock{
@@ -46,8 +46,6 @@ func TestRemoveNthFromEnd(t *testing.T) {
 	}
 }
 
-
-
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	nodeQuick := head
 	nodeSlow := head
@@ -55,7 +53,7 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	// 使得 (nodeQuick,head) 开区间的节点个数为 n
 	for i := 0; i < n+1; i++ {
 		nodeQuick = nodeQuick.Next
-		if nodeQuick == nil && i==n-1 { // 因为在 n == len(list) 的情况下,会越界
+		if nodeQuick == nil && i == n-1 { // 因为在 n == len(list) 的情况下,会越界
 			// 要删除的节点为第一个节点
 			return head.Next
 		}
@@ -85,7 +83,7 @@ func removeNthFromEnd1(head *ListNode, n int) *ListNode {
 			break
 		}
 	}
-	if i-n==1 || nodeSlow != head {
+	if i-n == 1 || nodeSlow != head {
 		nodeSlow.Next = nodeSlow.Next.Next
 		return head
 	} else {

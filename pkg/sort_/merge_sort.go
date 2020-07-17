@@ -52,4 +52,3 @@ func sortTwoOrder(nums1, nums2 []int) []int {
 
 	return ret
 }
-

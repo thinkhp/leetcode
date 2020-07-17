@@ -11,7 +11,6 @@ func TestFBN(t *testing.T) {
 	}
 }
 
-
 func fbn(i int) int {
 	switch i {
 	case 0:
@@ -19,6 +18,6 @@ func fbn(i int) int {
 	case 1:
 		return 1
 	default:
-		return fbn(i-2)+ fbn(i-1)
+		return fbn(i-2) + fbn(i-1)
 	}
 }

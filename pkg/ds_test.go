@@ -6,8 +6,8 @@ import (
 	"testing"
 )
 
-func TestMath(t *testing.T){
-	fmt.Println((math.Sqrt(5)-1)/2)
+func TestMath(t *testing.T) {
+	fmt.Println((math.Sqrt(5) - 1) / 2)
 	fmt.Println(math.Mod(math.Sqrt(5), 1))
 	fmt.Println(math.Floor(math.Sqrt(5)))
 	fmt.Println(math.Trunc(math.Sqrt(5)))
@@ -16,7 +16,7 @@ func TestMath(t *testing.T){
 	fmt.Println(math.Sqrt(4))
 }
 
-func TestBit(t *testing.T){
+func TestBit(t *testing.T) {
 	fmt.Println(1 | 2)
 	fmt.Println(300 & 13)
 	fmt.Println(13 & 300)
@@ -55,4 +55,3 @@ func TestQueue(t *testing.T) {
 
 // 堆
 type heap []interface{}
-

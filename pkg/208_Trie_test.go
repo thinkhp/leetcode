@@ -32,9 +32,9 @@ func TestTire(t *testing.T) {
 	t.Run("tire", func(t *testing.T) {
 		trie := Constructor()
 		trie.Insert("apple")
-		fmt.Println(trie.Search("apple")) // 返回 true
-		fmt.Println(trie.Search("app"))	// 返回 false
-		fmt.Println(trie.StartsWith("app"))// 返回 true
+		fmt.Println(trie.Search("apple"))   // 返回 true
+		fmt.Println(trie.Search("app"))     // 返回 false
+		fmt.Println(trie.StartsWith("app")) // 返回 true
 		//return
 		//trie.Insert("")
 		trie.Insert("app")
@@ -49,19 +49,20 @@ type trieNode struct {
 	isEnd bool
 	child [256]*trieNode
 }
+
 func newNode(value byte, isEnd bool) *trieNode {
 	return &trieNode{value, isEnd, [256]*trieNode{}}
 }
 
-func (n *trieNode)getChild(b byte) *trieNode {
+func (n *trieNode) getChild(b byte) *trieNode {
 	return n.child[b]
 }
 
-func (n *trieNode)appendChild(nn *trieNode) {
+func (n *trieNode) appendChild(nn *trieNode) {
 	n.child[nn.val] = nn
 }
 
-func (n *trieNode)String() string {
+func (n *trieNode) String() string {
 	s := fmt.Sprintf("val:%v %v", string(n.val), n.isEnd)
 	for i := 0; i < 256; i++ {
 		if n.child[i] != nil {
@@ -71,6 +72,7 @@ func (n *trieNode)String() string {
 
 	return s
 }
+
 type Trie struct {
 	tree *trieNode
 }

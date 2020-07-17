@@ -40,7 +40,7 @@ func canJump(nums []int) bool {
 		if i > max {
 			return false
 		}
-		if j := i+nums[i]; j > max {
+		if j := i + nums[i]; j > max {
 			max = j
 		}
 	}

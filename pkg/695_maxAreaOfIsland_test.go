@@ -46,7 +46,7 @@ func maxAreaOfIsland(grid [][]int) int {
 }
 
 func dfsGrid(grid [][]int, x, y int) int {
-	if y < 0 || y >= len(grid) || x < 0 || x >= len(grid[y]) || grid[y][x] == 0{
+	if y < 0 || y >= len(grid) || x < 0 || x >= len(grid[y]) || grid[y][x] == 0 {
 		return 0
 	}
 	grid[y][x] = 0

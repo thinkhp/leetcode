@@ -10,15 +10,15 @@ type stack struct {
 	buf []stackValue
 }
 
-func (s *stack)Init()  {
+func (s *stack) Init() {
 	s.buf = make([]stackValue, 0)
 }
 
-func (s *stack)Push(v stackValue)  {
+func (s *stack) Push(v stackValue) {
 	s.buf = append(s.buf, v)
 }
 
-func (s *stack)Pop() (stackValue, error) {
+func (s *stack) Pop() (stackValue, error) {
 	l := len(s.buf)
 	if l == 0 {
 		return 0, errs.New("underflow 栈下溢")
@@ -29,10 +29,10 @@ func (s *stack)Pop() (stackValue, error) {
 	return v, nil
 }
 
-func (s *stack)IsEmpty() bool {
+func (s *stack) IsEmpty() bool {
 	return len(s.buf) == 0
 }
 
-func (s *stack)Len() int {
+func (s *stack) Len() int {
 	return len(s.buf)
 }

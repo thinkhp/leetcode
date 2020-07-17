@@ -42,7 +42,6 @@ func insertIntoSorted(nums []int, num int) (ret []int) {
 		return append(nums, num)
 	}
 
-
 	index := 0
 	for i, v := range nums {
 		index = i

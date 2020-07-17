@@ -11,7 +11,7 @@ import (
 //
 //注意：给定 n 是一个正整数。
 
-func TestClimbStairs(t *testing.T)  {
+func TestClimbStairs(t *testing.T) {
 	fmt.Println(climbStairs(10))
 }
 
@@ -49,6 +49,7 @@ func climbStairs(n int) int {
 
 // 递归+备忘录
 var mark = make(map[int]int)
+
 func climbStairs1(n int) int {
 	if v, ok := mark[n]; ok {
 		return v
@@ -56,11 +57,11 @@ func climbStairs1(n int) int {
 	if n == 0 || n == 1 {
 		return 1
 	}
-	a := climbStairs1(n-1)
+	a := climbStairs1(n - 1)
 	mark[n-1] = a
-	b := climbStairs1(n-2)
+	b := climbStairs1(n - 2)
 	mark[n-2] = b
-	return a+b
+	return a + b
 }
 
 func ot(sum int, nums []int) [][]int {

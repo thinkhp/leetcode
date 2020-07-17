@@ -93,10 +93,8 @@ func isValid(s string) bool {
 			}
 		}
 	}
-	return iList.Len()==0
+	return iList.Len() == 0
 }
-
-
 
 func isValid1(s string) bool {
 	iList := list.New()

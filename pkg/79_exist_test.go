@@ -51,7 +51,7 @@ func dpsBoard(board [][]byte, directions [][]int, mark [][]bool, x, y int, str [
 	}
 	for _, v := range directions {
 		xn, yn := x+v[0], y+v[1]
-		if yn >= 0 && yn < len(board) && xn >= 0 && xn < len(board[yn]) && board[yn][xn] == str[0] && !mark[yn][xn]{
+		if yn >= 0 && yn < len(board) && xn >= 0 && xn < len(board[yn]) && board[yn][xn] == str[0] && !mark[yn][xn] {
 			if dpsBoard(board, directions, mark, xn, yn, str[1:]) {
 				return true
 			}

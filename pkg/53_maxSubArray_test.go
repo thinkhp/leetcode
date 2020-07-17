@@ -51,13 +51,12 @@ func maxSubArray1(nums []int) int {
 	// 转移方程：dp[i] = max(dp[i - 1]+nums[i], nums[i])
 	// dp 当前元素的值等于前一个元素值和 0 的最大值再加上 nums[i]
 	for i := 1; i < len(nums); i++ {
-		dp[i] = maxInt(dp[i-1], 0)+nums[i]
+		dp[i] = maxInt(dp[i-1], 0) + nums[i]
 		max = maxInt(max, dp[i])
 	}
 
 	return max
 }
-
 
 // 0:nums[0]
 // 1:max(nums[1], nums[0]+nums[1])

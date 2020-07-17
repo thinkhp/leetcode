@@ -7,7 +7,7 @@ import "testing"
 func TestMaxPricePackage(t *testing.T) {
 	type mock struct {
 		weight []int
-		price []int
+		price  []int
 	}
 
 	//ms := []mock
@@ -18,8 +18,6 @@ func TestMaxPricePackage(t *testing.T) {
 //
 func maxPrice(w []int, p []int) []int {
 	res := make([]int, 0)
-
-
 
 	return res
 }

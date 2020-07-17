@@ -35,17 +35,17 @@ import (
 // 基数排序
 // 将所有的元素转换为[]bit,高位对齐,低位补 0,之后桶排序或者交换
 
-func printSort(v []int, f func([]int) []int)  {
+func printSort(v []int, f func([]int) []int) {
 	fmt.Print(v, " => ")
 	fmt.Print(f(v))
 	fmt.Println()
 }
 
-func swap(a, b int) (int, int){
+func swap(a, b int) (int, int) {
 	//return b^a^a, a^b^b
-	a = a^b
-	b = b^a
-	a = a^b
+	a = a ^ b
+	b = b ^ a
+	a = a ^ b
 
 	return a, b
 }

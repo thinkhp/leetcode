@@ -12,7 +12,6 @@ func selectSort(nums []int) (ret []int) {
 	return ret
 }
 
-
 // 二元选择排序
 // 找出最大值+最小值,交换
 // 空间复杂度 O(n)

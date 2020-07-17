@@ -6,8 +6,7 @@ import (
 )
 
 func TestFindMin(t *testing.T) {
-	nums := []int{3,4,5,0,1,2,3}
-
+	nums := []int{3, 4, 5, 0, 1, 2, 3}
 
 	last := nums[0]
 	min := last

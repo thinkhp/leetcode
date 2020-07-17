@@ -30,14 +30,15 @@ func TestLongestCommonPrefix(t *testing.T) {
 	}
 	fmt.Println(longestCommonPrefix(strs))
 }
+
 //  i
 //  longest
 //j longest
 func longestCommonPrefix(strs []string) string {
 	str := strs[0]
 	i := 0
-	T:
-	for ; i < len(str); {
+T:
+	for i < len(str) {
 		for j := 1; j < len(strs); j++ {
 			l := len(strs[j])
 			if i > l-1 || strs[j][i] != str[i] {

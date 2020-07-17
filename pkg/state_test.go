@@ -14,11 +14,11 @@ func find(states [][]int, res [][]int) {
 	i := rand.Intn(len(states))
 	v := states[i]
 	res = append(res, v)
-	fmt.Println(len(res),len(append(states[:i], states[i+1:]...)))
+	fmt.Println(len(res), len(append(states[:i], states[i+1:]...)))
 	find(append(states[:i], states[i+1:]...), res)
 }
 
-func TestFmtInSlice(t *testing.T){
+func TestFmtInSlice(t *testing.T) {
 	fmt.Print("\rbbc")
 	fmt.Print("\rac")
 	//fmt.Print("\r")
@@ -34,7 +34,6 @@ func TestFmtInSlice(t *testing.T){
 
 }
 
-
 func TestState(t *testing.T) {
 	oxAndTiger(2, 2)
 
@@ -47,13 +46,13 @@ type stateCT struct {
 
 // 过河问题
 // 三牛三虎过河,任意一岸的虎的数量大于牛的数量,牛会被吃掉,船最多能装 2 只动物
-func oxAndTiger(cattle,tiger int){
-	tr := [][]int{{0,1},{0,2},{1,0},{1,1},{2,0}}
+func oxAndTiger(cattle, tiger int) {
+	tr := [][]int{{0, 1}, {0, 2}, {1, 0}, {1, 1}, {2, 0}}
 	states := make([]stateCT, 0)
-	for i := 0; i <= cattle; i++ {//牛
-		for j := 0; j <= tiger; j++ {//虎
+	for i := 0; i <= cattle; i++ { //牛
+		for j := 0; j <= tiger; j++ { //虎
 			//fmt.Println([]int{i, j, 3-i, 3-j})
-			if (j > i && i != 0) || (tiger-j > cattle-i && cattle-i!=0) {// 排除牛被吃的情况
+			if (j > i && i != 0) || (tiger-j > cattle-i && cattle-i != 0) { // 排除牛被吃的情况
 				continue
 			}
 			states = append(states, stateCT{i, j})
@@ -74,7 +73,7 @@ func oxAndTiger(cattle,tiger int){
 
 func route(start stateCT, end stateCT, states []stateCT, tr [][]int, sol []stateCT) (res [][]stateCT) {
 	sol = append(sol, start)
-	if start == end{
+	if start == end {
 		temp := make([]stateCT, len(sol))
 		copy(temp, sol)
 		res = append(res, temp)
