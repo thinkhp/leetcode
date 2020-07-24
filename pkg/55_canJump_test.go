@@ -30,7 +30,7 @@ func Test_canJump(t *testing.T) {
 	}
 
 	for _, v := range ss {
-		fmt.Println(v, canJump(v))
+		fmt.Println(v, canJump1(v))
 	}
 }
 
@@ -47,13 +47,31 @@ func canJump(nums []int) bool {
 
 	return true
 }
-
-// 遍历法
-func canJump1(nums []int) bool {
-	return jump(nums, 0)
+// DP
+// dp[i] = dp[i+1] + dp[i+2] + ...... + dp[i+nums[i]]
+func canJump2(nums []int) bool {
+	var dp = make(map[int]bool)
+	l := len(nums)
+	dp[l-1] = true
+	for i := len(nums)-2; i >= 0; i-- {
+		n := nums[i]
+		for j := 1; j <= n && i+j < l; j++ {
+			dp[i] = dp[i] || dp[i+j]
+		}
+	}
+	fmt.Println(dp)
+	return dp[0]
 }
 
-func jump(nums []int, i int) (ok bool) {
+// 递归
+func canJump1(nums []int) bool {
+	return jump(make(map[int]bool), nums, 0)
+}
+
+func jump(marks map[int]bool, nums []int, i int) (ok bool) {
+	if ok, exist := marks[i]; exist {
+		return ok
+	}
 	v := nums[i]
 	fmt.Printf("nums:%v in:%v canJump:%v\n", nums, i, v)
 	// 结束
@@ -66,11 +84,12 @@ func jump(nums []int, i int) (ok bool) {
 	}
 	// 约束
 	for j := 1; j <= v; j++ {
-		ok = ok || jump(nums, i+j)
+		ok = ok || jump(marks, nums, i+j)
 		if ok {
 			return
 		}
 	}
+	marks[i] = ok
 
 	return
 }
