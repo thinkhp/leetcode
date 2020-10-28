@@ -1,7 +1,6 @@
 package pkg
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -28,7 +27,7 @@ func TestMaxProfit_3(t *testing.T) {
 		{1, 2, 4, 2, 5, 7, 2, 4, 9, 0},
 	}
 	for _, v := range ss {
-		fmt.Println(v, maxProfit_3(v))
+		t.Log(v, maxProfit_3(v))
 	}
 }
 func maxProfit_3(prices []int) int {
