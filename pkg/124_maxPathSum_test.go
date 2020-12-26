@@ -47,7 +47,7 @@ func TestMaxPathSum(t *testing.T) {
 	}
 	for _, s := range ss {
 		tn := GetTreeNodeFromSlice(s)
-		t.Log(s, maxPathSum(tn))
+		t.Log(s, "\n"+tn.String()+"\n", maxPathSum(tn))
 	}
 
 }

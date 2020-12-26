@@ -30,13 +30,13 @@ func Test_canJump(t *testing.T) {
 	}
 
 	for _, v := range ss {
-		fmt.Println(v, canJump1(v))
+		fmt.Println(v, canJump(v))
 	}
 }
 
 func canJump(nums []int) bool {
 	max := 0
-	for i := max; i < len(nums); i++ {
+	for i := 0; i < len(nums); i++ {
 		if i > max {
 			return false
 		}
@@ -47,13 +47,14 @@ func canJump(nums []int) bool {
 
 	return true
 }
+
 // DP
-// dp[i] = dp[i+1] + dp[i+2] + ...... + dp[i+nums[i]]
+// dp[i] = dp[i+1] || dp[i+2] || ...... || dp[i+nums[i]]
 func canJump2(nums []int) bool {
 	var dp = make(map[int]bool)
 	l := len(nums)
 	dp[l-1] = true
-	for i := len(nums)-2; i >= 0; i-- {
+	for i := len(nums) - 2; i >= 0; i-- {
 		n := nums[i]
 		for j := 1; j <= n && i+j < l; j++ {
 			dp[i] = dp[i] || dp[i+j]

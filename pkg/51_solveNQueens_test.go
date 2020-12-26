@@ -46,15 +46,14 @@ func solveNQueensMine(n int) board {
 	}
 
 	for i := 0; i < n; i++ {
-
-	}
-
-	if ok {
 		bn, ok := board(b).place(0, 0)
 		board(bn).place(0, 0)
+		if ok {
+
+		}
 	}
 
-	return bn
+	return b
 }
 
 func solveNQueens(n int) [][]string {

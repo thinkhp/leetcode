@@ -15,6 +15,12 @@ import (
 //链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii
 //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
+
+// 题解1:
+// 将整个走势分为 2 部分,分别计算每部分的最大收益值M1, M2, 推进分割线, 计算 max(M1+M2)
+// 优化:从左到右 DP(L),从右到左 DP(R), M1 = DP(L,x), M2 = DP(R, n-x)
+// 题解2:
+// 状态机
 // 数组
 func TestMaxProfit_3(t *testing.T) {
 	ss := [][]int{
